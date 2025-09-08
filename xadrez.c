@@ -6,6 +6,8 @@
 #define bispo_movimento 5
 #define torre_movimento 5
 #define rainha_movimento 8
+//movimento do cavalo adicionado
+#define cavalo_movimento 1
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -45,6 +47,35 @@ int main() {
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
+
+    printf ("movimento do cavalo em L:\n");
+    
+    for (int i = 0; i < cavalo_movimento; i++) {
+        printf ("movimento %d:\n", i + 1);
+
+        // movimento em 2 casas qualquer direção
+        int j = 0;
+        while (j < 2 ) {
+            printf("baixo\n");
+            j++;
+        }
+        
+    
+
+    //movimenta 1 casa para formar o L
+    int k = 0;
+    do {
+        printf("esquerda\n");
+        k++;
+    } while ( k < 1 );
+
+
+    printf ("***********************\n");
+}
+    
+    
+
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
