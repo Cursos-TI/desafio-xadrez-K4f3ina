@@ -9,73 +9,105 @@
 //movimento do cavalo adicionado
 #define cavalo_movimento 1
 
+// movimento diagonal bispo
+void movebispo(int movimento) {
+    if (movimento == 0)
+    return;
+
+    //loop aninhado
+    for (int i = 0; i < 1; i++) {
+        printf("cima\n");
+        for (int j = 0; j < 1; j++) {
+            printf("direita\n");
+        }
+    }
+    
+    movebispo ( movimento - 1);
+}
+
+void movetorre (int movimento) {
+    if (movimento == 0)
+    return;
+
+    printf("direita\n");
+    movetorre(movimento - 1);
+}
+
+void moverainha (int movimento) {
+    if (movimento == 0)
+    return;
+
+    printf("esquerda\n");
+    moverainha(movimento - 1);
+}
+
+void movecavalo() {
+    printf("movimento do cavalo:\n");
+
+    int cima = 0, direita = 0;
+    int maximo_cima = 2, maximo_direita = 1;
+
+    for (int i = 0; i < 3; i++) {
+        if (cima < maximo_cima) {
+            cima++;
+            printf( "cima\n" );
+            continue;
+        }
+
+        if (direita < maximo_direita) {
+            direita++;
+            printf ( "direita\n");
+        }
+
+        //para o loop quando o movimento do cavalo termina
+
+        if (cima == maximo_cima && direita == maximo_direita) {
+            break;
+        }
+    }
+    printf ("***********************\n");
+
+}
+
+
 int main() {
+
+    printf("***********************\n");
+
+    printf(" movimento do bispo:\n");
+    movebispo (bispo_movimento);
+    printf("***********************\n");
+
+    printf("movimento da torre:\n");
+    movetorre (torre_movimento);
+    printf ("***********************\n");
+
+    printf("movimento rainha:\n");
+    moverainha (rainha_movimento);
+    printf ("***********************\n");
+
+
+    movecavalo();
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
     
     //Bispo se movimenta uma casa por vez até alcançar a posição determinada em define
-    printf ("movimento do bispo:\n");
-    for (int i = 0; i < bispo_movimento; i++){
-        printf("cima\n");
-        printf("direita\n");
-    }
-
-    //espaço vago para legibilidade
-    printf("***********************\n");
+    
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
 
-    printf("movimento da torre para a direita:\n");
-    for (int i = 0; i < torre_movimento; i++) {
-        printf("direita\n");
-    }
+   
     
-    printf("***********************\n");
-
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    printf("movimento da rainha para a esquerda:\n");
-    for (int i = 0; i <rainha_movimento; i++) {
-        printf("esquerda\n");
-    }
-
-    printf ("***********************\n");
+  
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
 
-    printf ("movimento do cavalo em L:\n");
-    
-    for (int i = 0; i < cavalo_movimento; i++) {
-        printf ("movimento %d:\n", i + 1);
-
-        // movimento em 2 casas qualquer direção
-        int j = 0;
-        while (j < 2 ) {
-            printf("baixo\n");
-            j++;
-        }
-        
-    
-
-    //movimenta 1 casa para formar o L
-    int k = 0;
-    do {
-        printf("esquerda\n");
-        k++;
-    } while ( k < 1 );
-
-
-    printf ("***********************\n");
-}
-    
-    
-
-    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
